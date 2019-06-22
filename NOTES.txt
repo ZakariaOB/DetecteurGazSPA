@@ -3,6 +3,6 @@
  - Show users : 
    User (Id, Nom, Prenom, Email , Telephone, Address)
    Contact(Id, Nom, Prenom, Telephone, Email, Address, UserId)
-   Capteur (Id, SensorValue, DateTime)
+   Capteur (Id, SensorValue, Status, DateTime)
  - Delete a user
  - update user contact list
