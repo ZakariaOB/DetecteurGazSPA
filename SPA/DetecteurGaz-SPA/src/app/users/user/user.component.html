@@ -1,0 +1,32 @@
+<div class="user">
+  <form #form="ngForm" >
+    <input type="hidden" name="userId" #userId="ngModel" [(ngModel)]="service.selectedUser.Id">
+    <div class="form-group">
+      <label>Nom</label>
+      <input name="FirstName" #FullName="ngModel" [(ngModel)]="service.selectedUser.FirstName" class="form-control" required>
+      <!--<div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>-->
+    </div>
+    <div class="form-group">
+      <label>Prénom</label>
+      <input name="LastName" #Position="ngModel" [(ngModel)]="service.selectedUser.LastName" class="form-control">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Email</label>
+        <input name="Email" #EMPCode="ngModel" [(ngModel)]="service.selectedUser.Email" class="form-control">
+      </div>
+      <div class="form-group  col-md-6">
+        <label>Téléphone : </label>
+        <input name="PhoneNumber" #Mobile="ngModel" [(ngModel)]="service.selectedUser.PhoneNumber" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Address : </label>
+      <input name="Address" #Mobile="ngModel" [(ngModel)]="service.selectedUser.Address" class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">Valider</button>
+    </div>
+  </form>
+</div>

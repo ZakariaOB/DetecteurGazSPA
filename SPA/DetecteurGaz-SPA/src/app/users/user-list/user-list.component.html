@@ -1,0 +1,12 @@
+<table class="table table-hover">
+  <tr class="pointer" *ngFor="let user of service.userList">
+    <td (click)="populateForm(user)">{{user.FirstName}} {{user.LastName}}</td>
+    <td (click)="populateForm(user)">{{user.PhoneNumber}}</td>
+    <td (click)="populateForm(user)">{{user.Address}}</td>
+    <td (click)="populateForm(user)">{{user.Email}}</td>
+    <td><button (click)="onDelete(user.Id)" class="btn btn-sm btn-outline-danger">X</button></td>
+    <td><a href="">Contact list</a></td>
+    <td><a href="">Historique des alarmes</a></td>
+    <td><img src=""</td>
+  </tr>
+</table>
