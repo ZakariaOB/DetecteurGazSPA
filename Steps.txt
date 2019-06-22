@@ -1,0 +1,8 @@
+- ng new BookingShare-SPA
+- ng serve
+- ng serve --open (Ouvrir l'application)
+- npm i jquery@1.9.1 --save
+- npm i popper.js@^1.14.7 --save
+- npm install bootstrap font-awesome
+- git clone https://github.com/ZakariaOB/DetecteurGazSPA.git
+- git remote add origin https://github.com/ZakariaOB/DetecteurGazSPA.git

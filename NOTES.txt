@@ -1,0 +1,8 @@
+
+1. Angular app
+ - Show users : 
+   User (Id, Nom, Prenom, Email , Telephone, Address)
+   Contact(Id, Nom, Prenom, Telephone, Email, Address, UserId)
+   Capteur (Id, SensorValue, DateTime)
+ - Delete a user
+ - update user contact list
