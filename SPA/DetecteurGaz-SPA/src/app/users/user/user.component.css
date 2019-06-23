@@ -1,7 +1,13 @@
 .user {
-    padding: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
-.label_text {
+label {
     float: left;
+    font-weight: bold;
+}
+
+.btn-colored {
+    background-color: green !important;
 }

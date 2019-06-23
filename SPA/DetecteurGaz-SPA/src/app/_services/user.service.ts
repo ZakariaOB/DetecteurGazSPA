@@ -15,21 +15,21 @@ export class UserService {
         u1.LastName = 'boukhris';
         u1.Address = 'Massira 1';
         u1.PhoneNumber = '+21266617571';
+        u1.Email = 'bou@gmail.com';
 
         const u2 = new User();
         u2.FirstName = 'Zakaria';
         u2.LastName = 'Torrrr';
         u2.Address = 'Mitabv';
         u2.PhoneNumber = '+21266617571';
-
-        this.userList.push(u1);
-        this.userList.push(u2);
-        this.userList.push(u1);
-        this.userList.push(u2);
-        this.userList.push(u1);
-        this.userList.push(u2);
-
+        u2.Email = 'bou@gmail.com';
         
+        this.userList.push(u1);
+        this.userList.push(u2);
+        this.userList.push(u1);
+        this.userList.push(u2);
+        this.userList.push(u1);
+        this.userList.push(u2);
         this.selectedUser = this.userList[0];
     }
 

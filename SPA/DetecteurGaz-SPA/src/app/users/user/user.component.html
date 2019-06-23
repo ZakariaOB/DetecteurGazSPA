@@ -1,14 +1,17 @@
 <div class="user">
-  <form #form="ngForm" >
+  <form #form="ngForm">
     <input type="hidden" name="userId" #userId="ngModel" [(ngModel)]="service.selectedUser.Id">
-    <div class="form-group">
-      <label>Nom</label>
-      <input name="FirstName" #FullName="ngModel" [(ngModel)]="service.selectedUser.FirstName" class="form-control" required>
-      <!--<div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>-->
-    </div>
-    <div class="form-group">
-      <label>Prénom</label>
-      <input name="LastName" #Position="ngModel" [(ngModel)]="service.selectedUser.LastName" class="form-control">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Nom</label>
+        <input name="FirstName" #FullName="ngModel" [(ngModel)]="service.selectedUser.FirstName" class="form-control"
+          required>
+        <!--<div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>-->
+      </div>
+      <div class="form-group  col-md-6">
+        <label>Prénom</label>
+        <input name="LastName" #Position="ngModel" [(ngModel)]="service.selectedUser.LastName" class="form-control">
+      </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -21,12 +24,12 @@
       </div>
     </div>
     <div class="form-group">
-      <label>Address : </label>
-      <input name="Address" #Mobile="ngModel" [(ngModel)]="service.selectedUser.Address" class="form-control">
+      <label>Addresse : </label>
+      <textarea name="Address" rows="3" #Mobile="ngModel" [(ngModel)]="service.selectedUser.Address" class="form-control"></textarea>
     </div>
-    
+
     <div class="form-group">
-      <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">Valider</button>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-lg btn-block btn-colored">Valider</button>
     </div>
   </form>
 </div>

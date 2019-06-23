@@ -29,4 +29,8 @@ export class UserListComponent implements OnInit {
       });
     }*/
   }
+
+  onEditUser(user) {
+    this.service.selectedUser = user;
+  }
 }
