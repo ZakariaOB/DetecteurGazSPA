@@ -17,6 +17,10 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from 'src/routes';
 import { AlertListComponent } from './alerts/alert-list/alert-list.component';
 import { NavComponent } from './nav/nav.component';
+import { FirebaseTestComponent } from './firebase-test/firebase-test.component';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
    declarations: [
@@ -27,12 +31,15 @@ import { NavComponent } from './nav/nav.component';
       ContactComponent,
       ContactListComponent,
       AlertListComponent,
-      NavComponent
+      NavComponent,
+      FirebaseTestComponent
    ],
    imports: [
       BrowserModule,
       FormsModule,
       HttpClientModule,
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFireDatabaseModule,
       RouterModule.forRoot(appRoutes)
    ],
    providers: [

@@ -6,3 +6,10 @@
 - npm install bootstrap font-awesome
 - git clone https://github.com/ZakariaOB/DetecteurGazSPA.git
 - git remote add origin https://github.com/ZakariaOB/DetecteurGazSPA.git
+
+Firebase usage (Mosh hamadani)
+
+- firbase / Angular (Mosh hamadani)
+- firebase.google.com
+- npm install firebase angularfire2
+- Note : Real time database vs FireStore => Completly different
