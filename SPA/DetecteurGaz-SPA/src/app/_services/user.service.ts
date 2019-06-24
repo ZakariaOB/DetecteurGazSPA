@@ -1,36 +1,53 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
+import { PagerService } from './pager.service';
+import { VArray } from '../_helper/ArrayHelper';
+import { Contact } from '../models/contact';
 
 @Injectable()
-export class UserService {
-
+export class UserService extends PagerService<User> {
     selectedUser: User;
     userList: User[];
-    constructor() { }
+    contactList: Array<Contact> = new Array<Contact>();
 
-    refreshList() {
-        this.userList = new Array();
-        const u1 = new User();
-        u1.FirstName = 'Mohamed';
-        u1.LastName = 'boukhris';
-        u1.Address = 'Massira 1';
-        u1.PhoneNumber = '+21266617571';
-        u1.Email = 'bou@gmail.com';
-
-        const u2 = new User();
-        u2.FirstName = 'Zakaria';
-        u2.LastName = 'Torrrr';
-        u2.Address = 'Mitabv';
-        u2.PhoneNumber = '+21266617571';
-        u2.Email = 'bou@gmail.com';
-        
-        this.userList.push(u1);
-        this.userList.push(u2);
-        this.userList.push(u1);
-        this.userList.push(u2);
-        this.userList.push(u1);
-        this.userList.push(u2);
-        this.selectedUser = this.userList[0];
+    constructor() {
+        super();
     }
 
+    refreshList() {
+        const dataUser = new Array<User>();
+        const range = VArray.range(0, 25, 1);
+        let i = 1;
+        range.forEach(el => {
+            const u = new User();
+            u.Id = i++;
+            u.FirstName = 'Mohamed_' + i;
+            u.LastName = 'boukhris_' + i;
+            u.Address = 'Massira__' + i;
+            u.PhoneNumber = '+2369911';
+            u.Email = 'mo@gmail.com';
+            dataUser.push(u);
+            this.addContactListDummy(u.Id);
+        });
+
+        this.selectedUser = dataUser[0];
+        this.allItems = dataUser;
+        this.setPage(1);
+    }
+
+    addContactListDummy(userId) {
+        const range = VArray.range(0, 5, 1);
+        let i = 1;
+        range.forEach(el => {
+            const u = new Contact();
+            u.Id = i++;
+            u.FirstName = 'Zakaria_' + i;
+            u.LastName = 'boukhris_' + i;
+            u.Address = 'Massira__' + i;
+            u.PhoneNumber = '+2369911';
+            u.Email = 'BOUKHE@gmail.com';
+            u.UserId = userId;
+            this.contactList.push(u);
+        });
+    }
 }

@@ -1,4 +1,4 @@
-<h2 style="float: left;padding-bottom: 20px; color: green">> Liste des utilisateurs : </h2>
+<h2 style="float: left;padding-bottom: 20px; color: green">> Liste des contacts de : {{user.FirstName}} {{user.LastName}} </h2>
 <br />
 <div style="height: 500px">
   <table class="table table-bordered">
@@ -8,22 +8,16 @@
         <th scope="col">Téléphone</th>
         <th scope="col">Addresse</th>
         <th scope="col">Email</th>
-        <th scope="col">Contact list</th>
-        <th scope="col">Alertes</th>
       </tr>
     </thead>
-    <tr class="pointer" *ngFor="let user of service.pagedItems">
-      <td (click)="populateForm(user)">{{user.FirstName}} {{user.LastName}}</td>
-      <td (click)="populateForm(user)">{{user.PhoneNumber}}</td>
-      <td (click)="populateForm(user)">{{user.Address}}</td>
-      <td (click)="populateForm(user)">{{user.Email}}</td>
-      <td><a [routerLink]="['/contact/', user.Id]" href="">Contact list</a></td>
-      <td><a href="">Alertes</a><img class="alarm" src="../../../assets/images/alertisimple.png" alt=""></td>
-      <td><button (click)="onEditUser(user)" class="btn btn-primary" data-toggle="modal"
-        data-target="#modalUser">Traiter</button></td>
-      <td><button (click)="onEditUser(user)" class="btn btn-primary" data-toggle="modal"
-          data-target="#modalUser">Edit</button></td>
-      <td><button (click)="onDelete(user.Id)" class="btn btn-sm btn-outline-danger">X</button></td>
+    <tr class="pointer" *ngFor="let contact of service.pagedItems">
+      <td (click)="populateForm(contact)">{{contact.FirstName}} {{contact.LastName}}</td>
+      <td (click)="populateForm(contact)">{{contact.PhoneNumber}}</td>
+      <td (click)="populateForm(contact)">{{contact.Address}}</td>
+      <td (click)="populateForm(contact)">{{contact.Email}}</td>
+      <td><button (click)="onEditcontact(contact)" class="btn btn-primary" data-toggle="modal"
+          data-target="#modalcontact">Edit</button></td>
+      <td><button (click)="onDelete(contact.Id)" class="btn btn-sm btn-outline-danger">X</button></td>
     </tr>
   </table>
   <!-- pager -->
@@ -46,18 +40,18 @@
 </ul>
 </div>
 
-<div class="modal fade" id="modalUser" tabindex="-1" role="dialog" aria-labelledby="modalUser" aria-hidden="true">
+<div class="modal fade" id="modalcontact" tabindex="-1" role="dialog" aria-labelledby="modalcontact" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{this.service.selectedUser.FirstName}}
-          {{this.service.selectedUser.LastName}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{this.service.selectedContact.FirstName}}
+          {{this.service.selectedContact.LastName}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <app-user></app-user>
+        <app-contact></app-contact>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

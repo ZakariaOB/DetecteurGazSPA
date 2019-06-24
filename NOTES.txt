@@ -6,3 +6,11 @@
    Capteur (Id, SensorValue, Status, DateTime)
  - Delete a user
  - update user contact list
+
+
+To do 
+
+- OK => Bootstarp grid design with pagination
+- Contact list
+- Alertes list
+- Crud with firbase
