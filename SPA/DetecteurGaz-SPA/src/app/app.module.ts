@@ -12,28 +12,36 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { PagerService } from './_services/pager.service';
 import { ContactComponent } from './contacts/contact/contact.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
-import { ContactsComponent } from './contacts/contacts/contacts.component';
 import { DetectorService } from './_services/detector.service';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from 'src/routes';
+import { AlertListComponent } from './alerts/alert-list/alert-list.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserComponent,
-    UsersComponent,
-    UserListComponent,
-    ContactComponent,
-    ContactListComponent,
-    ContactsComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes)
-  ],
-  providers: [UserService, PagerService, DetectorService],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      UserComponent,
+      UsersComponent,
+      UserListComponent,
+      ContactComponent,
+      ContactListComponent,
+      AlertListComponent,
+      NavComponent
+   ],
+   imports: [
+      BrowserModule,
+      FormsModule,
+      HttpClientModule,
+      RouterModule.forRoot(appRoutes)
+   ],
+   providers: [
+      UserService,
+      PagerService,
+      DetectorService
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

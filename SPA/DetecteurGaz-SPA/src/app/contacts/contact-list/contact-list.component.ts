@@ -20,7 +20,7 @@ export class ContactListComponent implements OnInit {
               private route: ActivatedRoute) { this.service = serv; }
 
   ngOnInit() {
-    this.loadContact();
+    this.loadContactList();
   }
 
   populateForm(contact: Contact) {
@@ -41,7 +41,7 @@ export class ContactListComponent implements OnInit {
     this.service.selectedContact = contact;
   }
 
-  loadContact() {
+  loadContactList() {
     const idLiteral = 'id';
     const userId = this.route.snapshot.params[idLiteral];
     const user = this.userService.allItems.find(u => u.Id === +userId);

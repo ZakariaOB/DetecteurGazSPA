@@ -18,7 +18,7 @@
       <td (click)="populateForm(user)">{{user.Address}}</td>
       <td (click)="populateForm(user)">{{user.Email}}</td>
       <td><a [routerLink]="['/contact/', user.Id]" href="">Contact list</a></td>
-      <td><a href="">Alertes</a><img class="alarm" src="../../../assets/images/alertisimple.png" alt=""></td>
+      <td><a [routerLink]="['/capteur/', user.Id]" href="">Alertes</a><img class="alarm" src="../../../assets/images/alertisimple.png" alt=""></td>
       <td><button (click)="onEditUser(user)" class="btn btn-primary" data-toggle="modal"
         data-target="#modalUser">Traiter</button></td>
       <td><button (click)="onEditUser(user)" class="btn btn-primary" data-toggle="modal"
