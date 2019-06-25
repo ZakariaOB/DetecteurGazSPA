@@ -27,16 +27,6 @@ export class ContactListComponent implements OnInit {
     this.service.selectedContact = Object.assign({}, contact);
   }
 
-  onDelete(id: number) {
-    /*
-    if (confirm('Are you sure to delete this record?')) {
-      this.service.deleteEmployee(id).subscribe(res => {
-        this.service.refreshList();
-        this.toastr.warning('Deleted successfully', 'EMP. Register');
-      });
-    }*/
-  }
-
   onEditcontact(contact) {
     this.service.selectedContact = Object.assign({}, contact);
   }

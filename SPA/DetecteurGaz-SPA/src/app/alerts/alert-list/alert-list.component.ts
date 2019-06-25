@@ -26,12 +26,11 @@ export class AlertListComponent implements OnInit {
 
   loadCapteurList() {
     const idLiteral = 'id';
-    const userId = this.route.snapshot.params[idLiteral];
-    const user = this.userService.allItems.find(u => u.Id === +userId);
+    const key = this.route.snapshot.params[idLiteral];
+    const user = this.userService.allItems.find(u => u.Key === key);
     if (user) {
       this.user = user;
     }
-    this.service.refreshList(+userId);
+    this.service.refreshList(key);
   }
-
 }

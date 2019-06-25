@@ -11,6 +11,12 @@ export class Constants {
     static Address = 'Address';
     static Key = 'key';
 
+    //capteur data
+    static SensorValue = 'SensorValue';
+    static Status = 'Status';
+    static StatusAlert = 'StatusAlert';
+    static ValueDate = 'ValueDate';
+
     // Contact data
     static UserKey = 'UserKey';
 }

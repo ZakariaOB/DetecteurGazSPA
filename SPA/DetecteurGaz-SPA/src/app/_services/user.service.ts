@@ -128,7 +128,7 @@ export class UserService extends PagerService<User> {
                     this.capteurList.forEach(u => fireBaseDbCapteurNode.push({
                         SensorValue: u.SensorValue,
                         Status: u.Status,
-                        ValueDate: u.ValueDate,
+                        ValueDate: u.ValueDate.toDateString(),
                         UserKey: u.UserKey
                     }));
                 }
