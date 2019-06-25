@@ -7,9 +7,18 @@
 - git clone https://github.com/ZakariaOB/DetecteurGazSPA.git
 - git remote add origin https://github.com/ZakariaOB/DetecteurGazSPA.git
 
+
+To do 
+
+- OK => Bootstarp grid design with pagination
+- OKContact list
+- ok Alertes list
+- Crud with firbase
+
 Firebase usage (Mosh hamadani)
 
 - firbase / Angular (Mosh hamadani)
 - firebase.google.com
 - npm install firebase angularfire2
 - Note : Real time database vs FireStore => Completly different
+- let coure of courses$ | async => async keyword will unsubscribe from the remote db automatically (Without explicitly doing that).

@@ -4,5 +4,5 @@ export class Capteur {
     Status: string;
     StatusAlert: boolean;
     ValueDate: Date;
-    UserId: number;
+    UserKey: string;
 }

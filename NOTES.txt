@@ -7,13 +7,11 @@
  - Delete a user
  - update user contact list
 
+ To do : 25-06-2019
+ - Crud user / contact / alerts
 
-To do 
 
-- OK => Bootstarp grid design with pagination
-- OKContact list
-- ok Alertes list
-- Crud with firbase
+
 
 
 

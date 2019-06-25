@@ -13,12 +13,12 @@
       </tr>
     </thead>
     <tr class="pointer" *ngFor="let user of service.pagedItems">
-      <td (click)="populateForm(user)">{{user.FirstName}} {{user.LastName}}</td>
-      <td (click)="populateForm(user)">{{user.PhoneNumber}}</td>
-      <td (click)="populateForm(user)">{{user.Address}}</td>
-      <td (click)="populateForm(user)">{{user.Email}}</td>
-      <td><a [routerLink]="['/contact/', user.Id]" href="">Contact list</a></td>
-      <td><a [routerLink]="['/capteur/', user.Id]" href="">Alertes</a><img class="alarm" src="../../../assets/images/alertisimple.png" alt=""></td>
+      <td >{{user.FirstName}} {{user.LastName}}</td>
+      <td >{{user.PhoneNumber}}</td>
+      <td >{{user.Address}}</td>
+      <td>{{user.Email}}</td>
+      <td><a [routerLink]="['/contact/', user.Key]" href="">Contact list</a></td>
+      <td><a [routerLink]="['/capteur/', user.Key]" href="">Alertes</a><img class="alarm" src="../../../assets/images/alertisimple.png" alt=""></td>
       <td><button (click)="onEditUser(user)" class="btn btn-primary" data-toggle="modal"
         data-target="#modalUser">Traiter</button></td>
       <td><button (click)="onEditUser(user)" class="btn btn-primary" data-toggle="modal"
@@ -50,8 +50,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{this.service.selectedUser.FirstName}}
-          {{this.service.selectedUser.LastName}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{this.service.selectedUser?.FirstName}}
+          {{this.service.selectedUser?.LastName}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -61,7 +61,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateUser()">Save changes</button>
       </div>
     </div>
   </div>

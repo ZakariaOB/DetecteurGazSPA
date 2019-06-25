@@ -13,7 +13,7 @@ export class CapteurService extends PagerService<Capteur> {
   }
   refreshList(userId) {
     this.userService.refreshList();
-    this.allItems = this.userService.capteurList.filter(i => i.UserId === userId);
+    this.allItems = this.userService.capteurList.filter(i => i.UserKey === userId);
     this.setPage(1);
   }
 

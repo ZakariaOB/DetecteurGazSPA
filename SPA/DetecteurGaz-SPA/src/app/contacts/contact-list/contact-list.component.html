@@ -12,10 +12,10 @@
       </tr>
     </thead>
     <tr class="pointer" *ngFor="let contact of service.pagedItems">
-      <td (click)="populateForm(contact)">{{contact.FirstName}} {{contact.LastName}}</td>
-      <td (click)="populateForm(contact)">{{contact.PhoneNumber}}</td>
-      <td (click)="populateForm(contact)">{{contact.Address}}</td>
-      <td (click)="populateForm(contact)">{{contact.Email}}</td>
+      <td >{{contact.FirstName}} {{contact.LastName}}</td>
+      <td >{{contact.PhoneNumber}}</td>
+      <td >{{contact.Address}}</td>
+      <td >{{contact.Email}}</td>
       <td><button (click)="onEditcontact(contact)" class="btn btn-primary" data-toggle="modal"
           data-target="#modalcontact">Edit</button></td>
       <td><button (click)="onDelete(contact.Id)" class="btn btn-sm btn-outline-danger">X</button></td>
@@ -45,8 +45,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{this.service.selectedContact.FirstName}}
-          {{this.service.selectedContact.LastName}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{this.service.selectedContact?.FirstName}}
+          {{this.service.selectedContact?.LastName}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -56,7 +56,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="updateContact()" data-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>

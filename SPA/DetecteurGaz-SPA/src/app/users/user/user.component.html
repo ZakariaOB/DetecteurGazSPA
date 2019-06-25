@@ -1,12 +1,12 @@
 <div class="user">
   <form #form="ngForm">
-    <input type="hidden" name="userId" #userId="ngModel" [(ngModel)]="service.selectedUser.Id">
+    <input type="hidden" name="userId">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Nom</label>
         <input name="FirstName" #FullName="ngModel" [(ngModel)]="service.selectedUser.FirstName" class="form-control"
           required>
-        <!--<div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>-->
+        <div class="validation-error" *ngIf="FullName.invalid && FullName.touched">This field is required.</div>
       </div>
       <div class="form-group  col-md-6">
         <label>Prénom</label>
@@ -27,9 +27,8 @@
       <label>Addresse : </label>
       <textarea name="Address" rows="3" #Mobile="ngModel" [(ngModel)]="service.selectedUser.Address" class="form-control"></textarea>
     </div>
-
-    <div class="form-group">
+    <!--<div class="form-group">
       <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-lg btn-block btn-colored">Valider</button>
-    </div>
+    </div>-->
   </form>
 </div>

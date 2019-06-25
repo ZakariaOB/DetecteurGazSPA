@@ -10,14 +10,12 @@ import { User } from 'src/app/models/user';
 export class UserListComponent implements OnInit {
 
   service: UserService;
+  userFireBaseData: any[];
+
   constructor(private serv: UserService) { this.service = serv; }
 
   ngOnInit() {
     this.service.refreshList();
-  }
-
-  populateForm(user: User) {
-    this.service.selectedUser = Object.assign({}, user);
   }
 
   onDelete(id: number) {
@@ -31,6 +29,10 @@ export class UserListComponent implements OnInit {
   }
 
   onEditUser(user) {
-    this.service.selectedUser = user;
+    this.service.selectedUser = Object.assign({}, user);
+  }
+
+  updateUser() {
+    this.service.updateSelectedUser();
   }
 }
